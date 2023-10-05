@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Multas</title>
+    <style>
+        .caxias{
+            display: grid;
+            
+            grid-template-columns: 20vw ;
+            border: solid black 2px;
+            grid-template-rows: 70px 30px 30px;
+            
+        
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sistema Multas</h1>
+
+    <div class="caxias">
+        <form>
+            <label for="maxVia">Velocidade Maxima da Via</label><br>
+            <input type="number" id="fnumber" name="fnumber"><br>
+        </form>  
+    
+        <form>
+            <label for="velocidadeV">Velocidade do Veículo</label><br>
+            <input type="number" id="fnnumer" name="fnumber"><br>
+            <input type="submit" value="Calcular">
+        </form>  
+    </div>
+    <div class="informacoes">
+        Multa por excesso de velocidade:
+                
+    R$ 130,16 - Até 20% acima do limite permitido
+    R$ 195,23 - De 20% até 50% acima do limite permitido
+    R$ 880,41 - Acima de 50% do limite permitido
+    </div>
+    
+    
+</body>
+</html>
+<script>
+    let velveiculo= document.getElementById("input_vel_veiculo").value ("input_vel_veiculo").value
+    function calculaVelocidade() {
+        let porcentagem = ((input_vel_veiculo.value - input_vel_max.value) / input_vel_max.value) * 100
+        if (porcentagem <= 20 ) {
+            multa = "R$ 130,16"
+        }
+        function calculaVelocidade() {
+        }
+        let divResultado = document.getElementById("resultado")
+        divResultado.innerHTML = ("Você excedeu " + porcentagem + " a velocidade máxima. Sua multa é de " + multa)
+        divResultado.innerHTML = ("Você excedeu " + porcentagem + " % a velocidade máxima. Sua multa é de " + multa)
+    }
+</script>
+    
