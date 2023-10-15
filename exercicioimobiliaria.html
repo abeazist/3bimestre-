@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imobiliaria</title>
+  </head>
+  <body>
+    <h1>Imobiliária</h1>
+    <label for="tamanho">Tamanho:</label>
+    <input type="number" id="tamanho"/>
+    <label for="peso">Peso:</label>
+    <input id="peso" type="number"/>
+    <label for="altura">Altura:</label>
+    <input id="altura" type="number"/><br/>
+    <script>
+      function calcular() {
+        let manga = document.getElementById("input_largura");
+        let inputProfundidade = document.getElementById("input_profundidade");
+        let inputPreco = document.getElementById("preco");
+
+        let banana = document.getElementById("tamanho");
+        let divPrecoTotal = document.getElementById("preco_total");
+
+        banana.innerHTML =
+          "<h2>Tamanho do terreno (em metros quadrados): " +
+          manga.value * inputProfundidade.value +
+          "</h2>";
+
+        divPrecoTotal.innerHTML =
+          "<h2>Preço do terreno: " +
+          inputPreco.value * manga.value * inputProfundidade.value +
+          "<h2>";
+      }
+    </script>
+  </body>
+</html>
