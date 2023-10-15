@@ -16,41 +16,63 @@ Desenvolva uma calculadora de IMC utilizando HTML, CSS e Javascript. A calculado
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora IMC</title>
+    <style>
+      .caixa{
+        border: solid rgba(121, 0, 0, 0.459) 1px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+      }
+
+
+    </style>
   </head>
   <body>
-    <h1>Calculadora IMC</h1>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome"/>
-    <label for="peso">Peso:</label>
-    <input id="peso" type="number"/>
-    <label for="altura">Altura:</label>
-    <input id="altura" type="number"/><br/>
+    <div class="caixa">
+        <h1>Calculadora IMC</h1>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" />
+        <label for="peso">Peso:</label>
+        <input id="peso" type="number" />
+        <label for="altura">Altura:</label>
+        <input id="altura" type="number" /><br />
 
-    <button onclick="calcular()">calcule</button>
-    <div id="resultado"></div>
+        <button onclick="calcular()">calcule</button>
+        <div id="resultado"></div>
+    </div>
 
-    <script>
-      function calcular() {
-        let nome = document.getElementById("nome").value;
-        let peso = document.getElementById("peso").value;
-        let altura = document.getElementById("altura").value;
-        let resultado = document.getElementById("resultado");
+      <script>
+        function calcular() {
+          let nome = document.getElementById("nome").value;
+          let peso = document.getElementById("peso").value;
+          let altura = document.getElementById("altura").value;
+          let resultado = document.getElementById("resultado");
 
-        let imc = peso / (altura * altura);
-        let categoria = "";
+          let imc = peso / (altura * altura);
+          let categoria = "";
 
-        if (imc < 18.5) {
-          categoria = "Magreza";
-        } else if (imc >= 18.5 && imc <= 24.9) {
-          categoria = "Peso Ideal";
-        } else if (imc >= 25 && imc <= 29.9) {
-          categoria = "Sobrepeso";
-        } else {
-          categoria = "Obesidade";
+          if (imc < 18.5) {
+            categoria = "Magreza";
+          } else if (imc >= 18.5 && imc <= 24.9) {
+            categoria = "Peso Ideal";
+          } else if (imc >= 25 && imc <= 29.9) {
+            categoria = "Sobrepeso";
+          } else {
+            categoria = "Obesidade";
+          }
+
+          resultado.innerHTML =
+            "<p>" +
+            nome +
+            " seu IMC é " +
+            imc +
+            " e você está na categoria " +
+            categoria +
+            "</p>";
         }
-       
-        resultado.innerHTML= "<p>" + nome + " seu IMC é " + imc + " e você está na categoria "+ categoria +"</p>"
-      }
-    </script>
+      </script>
+    
   </body>
 </html>
