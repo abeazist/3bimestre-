@@ -5,46 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Multas</title>
     <style>
-        .caxias{
+        .caxias {
             display: grid;
-            grid-template-columns: 20vw ;
+            grid-template-columns: 20vw;
             border: solid black 2px;
             grid-template-rows: 70px 30px 30px;
-            
-        
         }
-
     </style>
 </head>
 <body>
     <div class="caxias">
         <h1>Sistema Multas</h1>
-        <label for="maxVia">Velocidade Maxima da Via</label><br>
         <input type="number" id="maxVia"><br>
-        <label for="velocidadeV">Velocidade do Veículo</label><br>
+        <label for="maxVia">Velocidade Máxima da Via</label><br>
         <input type="number" id="velocidadeV"><br>
-        
-
-        <button onclick="calculaVelocidade()">calcule</button>
+        <label for="velocidadeV">Velocidade do Veículo</label><br>
+        <button onclick="calculaVelocidade()">Calcular</button>
         <div id="resultado"></div>
-        
     </div>
     <div class="informacoes">
         Multa por excesso de velocidade:
-                
-    R$ 130,16 - Até 20% acima do limite permitido
-    R$ 195,23 - De 20% até 50% acima do limite permitido
-    R$ 880,41 - Acima de 50% do limite permitido
+        R$ 130,16 - Até 20% acima do limite permitido
+        R$ 195,23 - De 20% até 50% acima do limite permitido
+        R$ 880,41 - Acima de 50% do limite permitido
     </div>
     
     <script>
         function calculaVelocidade() {
             let maxVia = parseFloat(document.getElementById("maxVia").value);
             let velocidadeV = parseFloat(document.getElementById("velocidadeV").value);
-            let resultado= document.getElementById("resultado")
+            let resultado = document.getElementById("resultado");
 
             if (velocidadeV > maxVia) {
-                let excesso = (velocidadeV - maxVia) / maxVia * 100
+                let excesso = (velocidadeV - maxVia) / maxVia * 100;
 
                 if (excesso <= 20) {
                     resultado.innerHTML = "Multa de R$ 130,16 - Até 20% acima do limite permitido. Você excedeu " + excesso.toFixed(2) + "% da velocidade.";
@@ -56,16 +49,7 @@
             } else {
                 resultado.innerHTML = "Não houve excesso de velocidade.";
             }
-             
         }
     </script>
-    
-    
 </body>
 </html>
-<script>
-    function calculaVelocidade() {
-        let 
-    }
-</script>
-    

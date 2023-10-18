@@ -15,31 +15,59 @@ Desenvolva uma calculadora de IMC utilizando HTML, CSS e Javascript. A calculado
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora IMC</title>
+    <title>Calculadora-IMC</title>
     <style>
       .caixa{
-        border: solid rgba(121, 0, 0, 0.459) 1px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
+        width: 240px;
+        background-color: rgb(243, 219, 0);
+        text-align: center;
+        
         
       }
+      button{
+        background-color: black;
+        color:rgb(243, 219, 0) ;
+        width: 60%;
+        border-radius: 10px;
+      }
+      .itens{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+
+      }
+     .preto{
+      background-color: black;
+      width: 240px;
+      height: 5px;
+     }
 
 
     </style>
   </head>
   <body>
     <div class="caixa">
-        <h1>Calculadora IMC</h1>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" />
-        <label for="peso">Peso:</label>
-        <input id="peso" type="number" />
-        <label for="altura">Altura:</label>
-        <input id="altura" type="number" /><br />
-
-        <button onclick="calcular()">calcule</button>
+        <h2>Calculadora-IMC</h2>
+        <div class="preto"></div>
+        <br>
+        <div class="itens">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" />
+          <label for="peso">Peso:</label>
+          <input id="peso" type="number" />
+          <label for="altura">Altura:</label>
+          <input id="altura" type="number" />
+        </div>
+        
+        <p><button onclick="calcular()">calcule</button></p>
         <div id="resultado"></div>
     </div>
 
