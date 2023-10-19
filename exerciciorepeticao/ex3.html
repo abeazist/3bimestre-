@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fibonacci</title>
 </head>
 <body>
-    OLA
+    <!DOCTYPE html>
+<html>
+<head>
+   
+    <h1>Sequência de Fibonacci</h1>
+    <input type="number" id="n" placeholder="quantidade de elementos">
+    <button onclick="gerarFibonacci()">Gerar Sequência</button>
+    <div id="resultado"></div>
+
+    <script>
+        function gerarFibonacci() {
+            let n = parseInt(document.getElementById("n").value);
+            let resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = ""; // Limpa o conteúdo anterior
+
+            let fib = [1, 1];
+
+            for (let i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+
+            resultado.innerHTML = "Sequência de Fibonacci: " + fib.join(", ");
+        }
+    </script>
+    <a href="exerciciosrepeticao.html">voltar</a>
+
+
 </body>
 </html>

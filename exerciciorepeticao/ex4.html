@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Parcelas</title>
 </head>
 <body>
-    OLA
+    <h1>Cálculo do Preço do Carro</h1>
+    <input type="number" id="precoCarro" placeholder="Informe o preço do carro">
+    <select id="parcelas">
+        <option value="6">6 parcelas</option>
+        <option value="12">12 parcelas</option>
+        <option value="18">18 parcelas</option>
+    </select>
+    <button onclick="calcularPreco()">Calcular</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPreco() {
+            let precoCarro = parseFloat(document.getElementById("precoCarro").value);
+            let parcelas = parseInt(document.getElementById("parcelas").value);
+            let resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = ""; 
+
+            let precoFinal = precoCarro;
+
+            if (parcelas === 6) {
+                precoFinal *= 1.03; // Acréscimo de 3%
+            } else if (parcelas === 12) {
+                precoFinal *= 1.06; // Acréscimo de 6%
+            } else if (parcelas === 18) {
+                precoFinal *= 1.09; // Acréscimo de 9%
+            }
+
+            let valorParcela = precoFinal / parcelas;
+
+            resultado.innerHTML = "Preço Final: R$ " + precoFinal.toFixed(2) + "<br>";
+            resultado.innerHTML += "Quantidade de Parcelas: " + parcelas + "x<br>";
+            resultado.innerHTML += "Valor da Parcela: R$ " + valorParcela.toFixed(2);
+        }
+    </script>
+    <a href="exerciciosrepeticao.html">voltar</a>
+
 </body>
 </html>

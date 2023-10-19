@@ -4,34 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imobiliaria</title>
+    <style>
+      .resultado {
+        margin-top: 20px;
+        width: 400px;
+        height: 100px;
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <h1>Imobiliária</h1>
-    <label for="tamanho">Tamanho:</label>
-    <input type="number" id="tamanho"/>
-    <label for="peso">Peso:</label>
-    <input id="peso" type="number"/>
-    <label for="altura">Altura:</label>
-    <input id="altura" type="number"/><br/>
-    
+    <label for="largura">Largura:</label>
+    <input type="number" id="largura" />
+    <label for="profundidade">Profundidade:</label>
+    <input id="profundidade" type="number" />
+    <label for="preco">preço(metro por quadrado):</label>
+    <input id="preco" type="number" /><br />
+    <button onclick="calcular()">calcule</button>
+    <div id="resultado"></div>
+
     <script>
       function calcular() {
-        let manga = document.getElementById("input_largura");
-        let inputProfundidade = document.getElementById("input_profundidade");
-        let inputPreco = document.getElementById("preco");
+        let largura = document.getElementById("largura").value;
+        let profundidade = document.getElementById("profundidade").value;
+        let preco = document.getElementById("preco").value;
+        let resultado = document.getElementById("resultado");
 
-        let banana = document.getElementById("tamanho");
-        let divPrecoTotal = document.getElementById("preco_total");
+        let tamanho = largura * profundidade;
+        let divprecoTotal = preco * tamanho;
 
-        banana.innerHTML =
-          "<h2>Tamanho do terreno (em metros quadrados): " +
-          manga.value * inputProfundidade.value +
-          "</h2>";
+        resultado.innerHTML =
+          "<h2>Tamanho do terreno (em metros quadrados): " + tamanho + "</h2>";
 
-        divPrecoTotal.innerHTML =
-          "<h2>Preço do terreno: " +
-          inputPreco.value * manga.value * inputProfundidade.value +
-          "<h2>";
+        resultado.innerHTML +=
+          "<h2>Preço do terreno: " + divprecoTotal+ "<h2>";
       }
     </script>
   </body>

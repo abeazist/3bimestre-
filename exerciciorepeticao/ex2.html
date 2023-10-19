@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabuada Personalizada</title>
 </head>
 <body>
-    OLA
+    <!DOCTYPE html>
+<html>
+<head>
+<body>
+    <h1>Tabuada com Início e Fim</h1>
+    <input type="number" id="numero" placeholder="Informe um número">
+    <input type="number" id="inicio" placeholder="Informe o início da tabuada">
+    <input type="number" id="fim" placeholder="Informe o fim da tabuada">
+    <button onclick="gerarTabuadaPersonalizada()">Gerar Tabuada</button>
+    <div id="resultado"></div>
+
+    <script>
+        function gerarTabuadaPersonalizada() {
+            let numero = parseInt(document.getElementById("numero").value);
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fim = parseInt(document.getElementById("fim").value);
+            let resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = ""; 
+
+            if (inicio <= fim) {
+                for (let i = inicio; i <= fim; i++) {
+                    let produto = numero * i;
+                    resultado.innerHTML += `${numero}x${i} = ${produto}<br>`;
+                }
+            } else {
+                resultado.innerHTML = "O início deve ser menor ou igual ao fim.";
+            }
+        }
+    </script>
+    <a href="exerciciosrepeticao.html">voltar</a>
+
 </body>
 </html>
