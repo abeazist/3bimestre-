@@ -3,11 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title> Network Registro</title>
 </head>
 <body>
-    <p><a href="cadastro.html">Voltar</a></p>
+    <!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --cor1:#1E2772;
+            --cor2:#555555;
+            --cor3:#C2C2C2;
+            --cor4:#FD7401;
+            --cor5:#FFF;
+            --cor6:#000000;
+            --cor7:#F1F3F6;
+
+        }
+
+        .conta{
+            display: grid;
+            grid-template-columns: 30% 70% ;
+            grid-template-rows: 100vh;
+            grid-template-areas: 
+            "c1 c2"
+            ;
+            
+            
+
+
+        }
+        
+        aside{
+            background-color:var(--cor5) ;
+            grid-area: c1;
+            gap: 20px;
+            padding: 2px;
+            
+            /* border: solid var(--cor6); */
+            
+            
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: c2;
+            background-color: var(--cor7);
+           
+        }
+        .cima{
+            display: flex;
+            display: row;
+            justify-content: space-between;
+        }
+        .imagem{
+            display: flex;
+            flex-direction:row ;
+            align-items: center;
+            justify-content: center;
+        }
+        .imagem{
+             display: flex;
+            flex-direction:row ;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="conta">
+        <aside>
+            <div class="cima">
+                <a href="cadastro.html">criar conta</a>
+                <a href="registro.html">resgistrar-se</a>
+            </div>
+            <br>
+            <p class="imagem"><img src="logo.png"></p>
+            <strong><p class="imagem">Login into your account</p></strong><br>
+            <label for="emailAdress">Email</label>
+            <input id="emailAdress" type="text" placeholder="admin@email.com.br"/>
+            <label for="password">Senha:</label>
+            <input id="password" type="password" placeholder="Enter your password">
+            <button onclick="LoginAccount()">Login</button>
+        </aside>
+        <main>
+            <img src="login-illustrator.png">
+
+        </main>
     
-    
+    </div>
+    <script>
+        function LoginAccount() {
+            let email = document.getElementById("emailAdress").value
+            let senha = document.getElementById("password").value
+  
+            let senhaCorreta="#dw1UTFPR#"
+            let emailCorreto="admin@email.com.br"
+  
+            if (senha != senhaCorreta) {
+                alert("Senha Incorreta");
+  
+            }  else if (email != emailCorreto) {
+                alert("Email Incorreto");
+  
+            }  else {
+                alert("Você foi autentificado");
+                
+            }
+  
+          
+        }
+  
+       
+        
+      </script>
 </body>
 </html>

@@ -1,94 +1,116 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Cadastro</title>
     <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        :root{
-            --cor1:#1E2772;
-            --cor2:#555555;
-            --cor3:#C2C2C2;
-            --cor4:#FD7401;
-            --cor5:#FFF;
-            --cor6:#000000;
-            --cor7:#F1F3F6;
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --cor1: #1e2772;
+        --cor2: #555555;
+        --cor3: #c2c2c2;
+        --cor4: #fd7401;
+        --cor5: #fff;
+        --cor6: #000000;
+        --cor7: #f1f3f6;
+      }
 
-        }
+      .conta {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 100vh;
+        grid-template-areas: "c1 c2";
+      }
 
-        .conta{
-            display: grid;
-            grid-template-columns: 30% 70% ;
-            grid-template-rows: 100vh;
-            grid-template-areas: 
-            "c1 c2"
-            ;
-            
-            
+      aside {
+        background-color: var(--cor5);
+        grid-area: c1;
+        gap: 20px;
+        padding: 2px;
 
-
-        }
-        
-        aside{
-            background-color:var(--cor5) ;
-            grid-area: c1;
-            display: flex;
-            /* border: solid var(--cor6); */
-            
-            
-        }
-        main{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            grid-area: c2;
-            background-color: var(--cor7);
-            /* border: solid var(--cor6); */
-        }
-        .cima{
-            display: flex;
-            display: row;
-            justify-content: space-between;
-        }
-        .p{
-            flex-direction:row ;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
+        /* border: solid var(--cor6); */
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: c2;
+        background-color: var(--cor7);
+      }
+      .cima {
+        display: flex;
+        display: row;
+        justify-content: space-between;
+      }
+      .imagem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .imagem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="conta">
-        <aside>
-            <div class="cima">
-                <a href="cadastro.html">criar conta</a>
-                <a href="registro.html">resgistrar-se</a>
-            </div>
-            <p><img src="logo.png"></p>
-            <strong><p>Create account</p></strong>
-            <label for="fullName">Nome Completo</label>
-            <input id="fullName" type="text" placeholder="John Doe"/>
-            <label for="emailAdress">Email</label>
-            <input id="emailAdress" type="text" placeholder="john@email.com"/>
-            <label for="password">Senha:</label>
-            <input id="password" type="password">
-            <button onclick="CreateAccount()">Criar Conta</button>
-        </aside>
-        <main>
-            <img src="login-illustrator.png">
-
-        </main>
-        
-
-
+      <aside>
+        <div class="cima">
+          <a href="cadastro.html">criar conta</a>
+          <a href="registro.html">resgistrar-se</a>
+        </div>
+        <br />
+        <p class="imagem"><img src="logo.png" /></p>
+        <strong><p class="imagem">Create account</p></strong><br />
+        <label for="fullName">Nome Completo</label>
+        <input id="fullName" type="text" placeholder="John Doe" />
+        <label for="emailAdress">Email</label>
+        <input id="emailAdress" type="text" placeholder="john@email.com" />
+        <label for="password">Senha:</label>
+        <input id="password" type="password" />
+        <button onclick="CreateAccount()">Criar Conta</button>
+      </aside>
+      <main>
+        <img src="login-illustrator.png" />
+      </main>
     </div>
-</body>
+    <script>
+      function CreateAccount() {
+          let senha = document.getElementById("password").value
+          let nomeCompleto = document.getElementById("fullName").value
+          let email = document.getElementById("emailAdress").value
+
+          let senhaIncopleta=""
+          let nomeVazio=""
+
+          if (senha.length < 8 || senha === senhaIncopleta) {
+              alert("Tamanho da senha deve ser maior que 8");
+
+          } else if (nomeCompleto === nomeVazio ) {
+              alert("Preencha o campo nome");
+
+          }  else if (email === "") {
+              alert("Preencha o campo email");
+
+          }  else {
+              alert("Cadastro realizado");
+              
+          }
+
+        
+      }
+
+     
+      
+    </script>
+  </body>
 </html>
