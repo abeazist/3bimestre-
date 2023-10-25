@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Network Cadastro</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        font-family: poppins;
       }
       :root {
         --cor1: #1e2772;
@@ -28,12 +33,11 @@
       }
 
       aside {
+        display: flex;
+        flex-direction: column;
         background-color: var(--cor5);
         grid-area: c1;
         gap: 20px;
-        padding: 2px;
-
-        /* border: solid var(--cor6); */
       }
       main {
         display: flex;
@@ -53,11 +57,29 @@
         align-items: center;
         justify-content: center;
       }
-      .imagem {
+      .info {
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
+        align-content: center;
+        width: 80%;
+        height: 40px;
+       
+      }
+      .input{
+        border-radius: 8px;
+      }
+
+      .palavra{
+        color: var(--cor2);
+      }
+
+      #cadastro {
+        color: var(--cor4);
+      }
+
+      #registro {
+        color: var(--cor1);
       }
     </style>
   </head>
@@ -65,18 +87,40 @@
     <div class="conta">
       <aside>
         <div class="cima">
-          <a href="cadastro.html">criar conta</a>
-          <a href="registro.html">resgistrar-se</a>
+          <a id="cadastro" href="cadastro.html">criar conta</a>
+          <a id="registro" href="registro.html">resgistrar-se</a>
         </div>
         <br />
         <p class="imagem"><img src="logo.png" /></p>
-        <strong><p class="imagem">Create account</p></strong><br />
-        <label for="fullName">Nome Completo</label>
-        <input id="fullName" type="text" placeholder="John Doe" />
-        <label for="emailAdress">Email</label>
-        <input id="emailAdress" type="text" placeholder="john@email.com" />
-        <label for="password">Senha:</label>
-        <input id="password" type="password" />
+        <strong><p class="imagem">Create account</p></strong><br>
+        <div class="info">
+          <label class="palavra "="fullName">Nome Completo</label>
+          <input id="fullName" 
+          type="text" 
+          placeholder="John Doe" 
+          class="input"/>
+
+        </div>
+
+        <div class="info">
+          <label class="palavra for="emailAdress">Email</label>
+          <input 
+          id="emailAdress" 
+          type="text" 
+          placeholder="john@email.com" 
+          class="input"/>
+
+        </div>
+
+        <div class="info">
+          <label class="palavra for="password">Senha:</label>
+          <input 
+          id="password" 
+          type="password" 
+          class="input"/>
+
+        </div>
+
         <button onclick="CreateAccount()">Criar Conta</button>
       </aside>
       <main>
@@ -85,32 +129,23 @@
     </div>
     <script>
       function CreateAccount() {
-          let senha = document.getElementById("password").value
-          let nomeCompleto = document.getElementById("fullName").value
-          let email = document.getElementById("emailAdress").value
+        let senha = document.getElementById("password").value;
+        let nomeCompleto = document.getElementById("fullName").value;
+        let email = document.getElementById("emailAdress").value;
 
-          let senhaIncopleta=""
-          let nomeVazio=""
+        let senhaIncopleta = "";
+        let nomeVazio = "";
 
-          if (senha.length < 8 || senha === senhaIncopleta) {
-              alert("Tamanho da senha deve ser maior que 8");
-
-          } else if (nomeCompleto === nomeVazio ) {
-              alert("Preencha o campo nome");
-
-          }  else if (email === "") {
-              alert("Preencha o campo email");
-
-          }  else {
-              alert("Cadastro realizado");
-              
-          }
-
-        
+        if (senha.length < 8 || senha === senhaIncopleta) {
+          alert("Tamanho da senha deve ser maior que 8");
+        } else if (nomeCompleto === nomeVazio) {
+          alert("Preencha o campo nome");
+        } else if (email === "") {
+          alert("Preencha o campo email");
+        } else {
+          alert("Cadastro realizado");
+        }
       }
-
-     
-      
     </script>
   </body>
 </html>

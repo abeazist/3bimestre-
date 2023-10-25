@@ -1,132 +1,167 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Network Registro</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network</title>
-    <style>
-        *{
+    <html lang="PT-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Network</title>
+        <style>
+          * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-        }
-        :root{
-            --cor1:#1E2772;
-            --cor2:#555555;
-            --cor3:#C2C2C2;
-            --cor4:#FD7401;
-            --cor5:#FFF;
-            --cor6:#000000;
-            --cor7:#F1F3F6;
+            font-family: poppins;
+          }
+          :root {
+            --cor1: #1e2772;
+            --cor2: #555555;
+            --cor3: #c2c2c2;
+            --cor4: #fd7401;
+            --cor5: #fff;
+            --cor6: #000000;
+            --cor7: #f1f3f6;
+          }
 
-        }
-
-        .conta{
+          .conta {
             display: grid;
-            grid-template-columns: 30% 70% ;
+            grid-template-columns: 30% 70%;
             grid-template-rows: 100vh;
-            grid-template-areas: 
-            "c1 c2"
-            ;
-            
-            
+            grid-template-areas: "c1 c2";
+          }
 
-
-        }
-        
-        aside{
-            background-color:var(--cor5) ;
+          aside {
+            background-color: var(--cor5);
             grid-area: c1;
+            display: flex;
+            flex-direction: column;
             gap: 20px;
-            padding: 2px;
             
-            /* border: solid var(--cor6); */
-            
-            
-        }
-        main{
+          }
+          main {
             display: flex;
             justify-content: center;
             align-items: center;
             grid-area: c2;
             background-color: var(--cor7);
-           
-        }
-        .cima{
+          }
+          .cima {
             display: flex;
             display: row;
             justify-content: space-between;
-        }
-        .imagem{
+          }
+          .imagem {
             display: flex;
-            flex-direction:row ;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-        }
-        .imagem{
-             display: flex;
-            flex-direction:row ;
-            align-items: center;
+          }
+
+          #cadastro {
+            color: var(--cor4);
+          }
+
+          #registro {
+            color: var(--cor1);
+          }
+          .input {
+            background-image: url(Vector.png);
+            background-repeat: no-repeat;
+            background-position: calc(100% - 5px) center;
+            padding-right: 30px; /* espaço para o ícone */
+            background-color: var(--cor4);
+            border-radius: 8px;
+            width: 80%;
+            height: 40px;
+          }
+          .input-p {
+            background-image: url(Frame.png);
+            background-repeat: no-repeat;
+            background-position: calc(100% - 5px) center;
+            padding-right: 30px; /* espaço para o ícone */
+            background-color: var(--cor4);
+            border-radius: 8px;
+            width: 80%;
+            height: 40px;
+          }
+          .info{
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-        }
+            align-content: center;
+            width: 90%;
+            
+          }
 
-    </style>
-
-</head>
-<body>
-    <div class="conta">
-        <aside>
+          .palavra{
+            color: var(--cor2);
+          }
+        </style>
+      </head>
+      <body>
+        <div class="conta">
+          <aside>
             <div class="cima">
-                <a href="cadastro.html">criar conta</a>
-                <a href="registro.html">resgistrar-se</a>
+              <a id="cadastro" href="cadastro.html">criar conta</a>
+              <a id="registro" href="registro.html">resgistrar-se</a>
             </div>
-            <br>
-            <p class="imagem"><img src="logo.png"></p>
-            <strong><p class="imagem">Login into your account</p></strong><br>
-            <label for="emailAdress">Email</label>
-            <input id="emailAdress" type="text" placeholder="admin@email.com.br"/>
-            <label for="password">Senha:</label>
-            <input id="password" type="password" placeholder="Enter your password">
+            <br />
+            <p class="imagem"><img src="logo.png" /></p>
+            <strong><p class="imagem">Login into your account</p></strong><br />
+            <div class="info">
+              <label class="palavra" for="emailAdress">Email:</label>
+              <input
+                id="emailAdress"
+                type="text"
+                placeholder="admin@email.com.br"
+                class="input"
+              />
+            </div>
+            <div class="info">
+              <label class="palavra" for="password">Senha:</label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                class="input-p"
+              />
+            </div>
             <button onclick="LoginAccount()">Login</button>
-        </aside>
-        <main>
-            <img src="login-illustrator.png">
+          </aside>
+          <main>
+            <img src="login-illustrator.png" />
+          </main>
+        </div>
+        <script>
+          function LoginAccount() {
+            let email = document.getElementById("emailAdress").value;
+            let senha = document.getElementById("password").value;
 
-        </main>
-    
-    </div>
-    <script>
-        function LoginAccount() {
-            let email = document.getElementById("emailAdress").value
-            let senha = document.getElementById("password").value
-  
-            let senhaCorreta="#dw1UTFPR#"
-            let emailCorreto="admin@email.com.br"
-  
+            let senhaCorreta = "#dw1UTFPR#";
+            let emailCorreto = "admin@email.com.br";
+
             if (senha != senhaCorreta) {
-                alert("Senha Incorreta");
-  
-            }  else if (email != emailCorreto) {
-                alert("Email Incorreto");
-  
-            }  else {
-                alert("Você foi autentificado");
-                
+              alert("Senha Incorreta");
+            } else if (email != emailCorreto) {
+              alert("Email Incorreto ou campo não preenchido");
+            } else {
+              alert("Você foi autentificado");
             }
-  
-          
-        }
-  
-       
-        
-      </script>
-</body>
+          }
+        </script>
+      </body>
+    </html>
+  </body>
 </html>
