@@ -113,9 +113,9 @@
           <a id="cadastro" href="cadastro.html">criar conta</a>
           <a id="registro" href="registro.html">resgistrar-se</a>
         </div>
-        
+        <br/>
         <p class="imagem"><img src="logo.png" /></p>
-        <strong><p class="imagem">Criar conta</p></strong><br>
+        <strong><p class="imagem">Criar conta</p></strong>
         <div class="info">
           <label class="palavra "="fullName">Nome Completo</label>
           <input id="fullName" 
@@ -159,17 +159,23 @@
 
         let senhaIncopleta = "";
         let nomeVazio = "";
+        let senhaVazia= ""
+        let emailVazio="";
 
-        if (senha.length < 8 || senha === senhaIncopleta) {
+        if (email === emailVazio||senha === senhaVazia ||nomeCompleto === nomeVazio ) {
+          alert("Todos os campos devem ser preenchidos");
+        }
+         else if (senha.length < 8 || senha === senhaIncopleta) {
           alert("Tamanho da senha deve ser maior que 8");
-        } else if (nomeCompleto === nomeVazio) {
-          alert("Preencha o campo nome");
-        } else if (email === "") {
-          alert("Preencha o campo email");
+      
         } else {
           alert("Cadastro realizado");
+          document.getElementById("fullName").value = "";
+          document.getElementById("emailAdress").value = "";
+          document.getElementById("password").value = "";
         }
-      }
+    }
+      
     </script>
   </body>
 </html>
