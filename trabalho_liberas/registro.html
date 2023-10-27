@@ -48,6 +48,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            padding: 25px 25px 75px 25px;
           }
           main {
             display: flex;
@@ -60,6 +61,7 @@
             display: flex;
             display: row;
             justify-content: space-between;
+            font-weight: bold;
           }
           .imagem {
             display: flex;
@@ -75,10 +77,12 @@
           #registro {
             color: var(--cor1);
           }
-          .input{
+          .input {
             border-radius: 8px;
             width: 100%;
             height: 40px;
+            background-color: var(--cor7);
+            border: 0;
           }
           .input-p {
             background-repeat: no-repeat;
@@ -86,6 +90,8 @@
             border-radius: 8px;
             width: 100%;
             height: 40px;
+            background-color: var(--cor7);
+            border: 0;
           }
           .label-inp-icon {
             display: flex;
@@ -115,6 +121,18 @@
           .palavra {
             color: var(--cor2);
           }
+
+          #login {
+            width: 365px;
+            top: 659px;
+            left: 35;
+            height: 40px;
+            border-radius: 8px;
+            background-color: var(--cor4);
+            color: var(--cor7);
+            border: 0;
+          }
+          
         </style>
       </head>
       <body>
@@ -136,13 +154,13 @@
                   placeholder="admin@email.com.br"
                   class="input"
                 />
-                <i><img
+                <i
+                  ><img
                     src="Vector.png"
                     width="20px"
                     height="20px"
                     top="451px"
                     left="408px"
-                    
                 /></i>
               </div>
             </div>
@@ -152,30 +170,13 @@
                 <input
                   id="password"
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Entre com sua senha"
                   class="input-p"
                 />
-                <i><img 
-                  src="Frame.png" 
-                  width="50%" 
-                  height="60%" 
-                /></i>
+                <i><img src="Frame.png" width="50%" height="60%" /></i>
               </div>
             </div>
-            <button
-              style="
-                width: 410px;
-                top: 659px;
-                left: 35;
-                height: 50px;
-                border-radius: 8px;
-                background-color: var(--cor4);
-                color: var(--cor7);
-              "
-              onclick="LoginAccount()"
-            >
-              Login
-            </button>
+            <button id="login" onclick="LoginAccount()">Login</button>
           </aside>
           <main>
             <img src="login-illustrator.png" />
