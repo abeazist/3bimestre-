@@ -32,14 +32,22 @@
 
     <script>
       function calculeGorjeta() {
-      let valorConta = document.getElementById("valorConta").value
-      let tipoConta=document.getElementById().value
+      let valorConta = parseFloat(document.getElementById("valorConta").value)
+      let gorjeta = parseFloat(document.getElementById("qualidadeServico").value) 
+      let valorGorjeta= ""
 
-      if (valorConta  === " "){
+      if (valorConta  === "" ){
           alert("Preencha todos os campos!")
       }
+			else{
+					valorGorjeta= valorConta*gorjeta
+					valorTotal= valorConta+valorGorjeta
+
+          document.getElementById("tipoConta").value = "R$ " + valorGorjeta;
+          document.getElementById("valorTotal").value = "R$ " + valorTotal;
     }
+        
+  }
     </script>
   </body>
 </html>
-
