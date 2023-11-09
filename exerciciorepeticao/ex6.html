@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    OLA
+    <h1>Sorteador</h1>
+    <input type="number" id="n" placeholder="informe um número">
+    <button id="gerarRandom" onclick="gerarRandom()">gerar</button>
+
+    <script>
+        let n = document.getElementById("n").value
+        let result = document.getElementById("result")
+        function gerarRandom(min,n){
+            return Math.random()* (max - min) + min
+             
+
+        }
+    </script>
 </body>
 </html>
