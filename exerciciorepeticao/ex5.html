@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Números Primos</title>
 </head>
 <body>
-    OLA
+    <h1>Exibir Números Primos</h1>
+
+    <label for="numeroN">Informe um número N:</label>
+    <input type="number" id="numeroN" placeholder="Informe um número">
+    <button onclick="exibirPrimos()">Exibir Primos</button>
+    <div id="resultado"></div>
+    
+    <script>
+        function exibirPrimos() {
+            let n = parseInt(document.getElementById("numeroN").value);
+
+            let primos = calcularPrimos(n);
+
+            let resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = "<p>Números Primos:</p><p>" + primos.join(", ") + "</p>";
+        }
+
+        function calcularPrimos(n) {
+            let primos = [];
+            let candidato = 2;
+
+            while (primos.length < n) {
+                if (ehPrimo(candidato)) {
+                    primos.push(candidato); // serve para add um elemento no final da lista ---!>
+                }
+                candidato++;
+            }
+
+            return primos;
+        }
+
+        function ehPrimo(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num !== 1;
+        }
+    </script>
+</body>
+</html>
+
 </body>
 </html>

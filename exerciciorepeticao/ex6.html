@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteador</title>
+  </head>
+  <body>
     <h1>Sorteador</h1>
-    <input type="number" id="n" placeholder="informe um número">
-    <button id="gerarRandom" onclick="gerarRandom()">gerar</button>
+    <input type="number" id="n" placeholder="Informe um número" />
+    <button id="gerarRandom" onclick="gerarRandom()">Gerar</button>
+    <p id="resultado"></p>
 
     <script>
-        let n = document.getElementById("n").value
-        let result = document.getElementById("result")
-        function gerarRandom(min,n){
-            return Math.random()* (max - min) + min
-             
+      function gerarRandom() {
+        let max = parseInt(document.getElementById("n").value);
 
-        }
+        let resultado = Math.floor(Math.random() * max) + 1;
+
+        document.getElementById("resultado").innerText =
+          "Número sorteado: " + resultado;
+      }
     </script>
-</body>
+  </body>
 </html>
